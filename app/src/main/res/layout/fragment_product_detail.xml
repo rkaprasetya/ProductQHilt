@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.productdetail.ProductDetailFragment">
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/detail_ll_margin_start_end"
+        android:layout_marginEnd="@dimen/detail_ll_margin_start_end"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/detail_ll_padding_start_end"
+        android:paddingEnd="@dimen/detail_ll_padding_start_end"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_detail"
+        app:layout_constraintVertical_bias="0.39">
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pronas_daging_kornet"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/item_tv_size" />
+        <TextView
+            android:id="@+id/tv_detail_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/detail_price_size" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="@dimen/detail_divider_margin_top"
+            android:layout_marginBottom="@dimen/detail_divider_margin_bottom"
+            />
+        <TextView
+            android:id="@+id/tv_detail_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/detail_price_size" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_detail"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/detail_iv_height"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_product_detail"
+        tools:src="@tools:sample/avatars"
+        tools:ignore="ContentDescription" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_product_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/product_appbar_tv_margin_top"
+            android:layout_marginStart="@dimen/product_appbar_tv_margin_start"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="@dimen/detail_appbar_iv_width_height"
+                android:layout_height="@dimen/detail_appbar_iv_width_height"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/tv_detail_appbar"
+                android:layout_marginStart="@dimen/product_appbar_title_margin_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/product_appbar_tv_size"
+                android:textColor="@color/orange"
+                android:text="@string/pronas_daging_kornet"
+                />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_list"
+        android:layout_width="@dimen/iv_item_width"
+        android:layout_height="@dimen/iv_item_height"
+        android:layout_marginStart="@dimen/item_margin_start"
+        android:layout_marginTop="@dimen/item_margin_top"
+        android:layout_marginBottom="@dimen/item_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="@dimen/tv_item_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tv_item_title_margin_start"
+        android:layout_marginTop="@dimen/tv_item_title_margin_top"
+        android:textSize="@dimen/item_tv_size"
+        android:textColor="@color/orange"
+        android:text="@string/tv_title"
+        app:layout_constraintStart_toEndOf="@+id/iv_item_list"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/item_tv_size"
+        android:layout_marginStart="@dimen/item_margin_start"
+        android:layout_marginTop="@dimen/tv_item_price_margin_top"
+        android:text="@string/tv_desc"
+        app:layout_constraintStart_toEndOf="@+id/iv_item_list"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
+
+    <TextView
+        android:id="@+id/tv_item_stok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tv_item_title_margin_top"
+        android:layout_marginEnd="@dimen/tv_item_stock_margin_end"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/item_tv_size"
+        android:text="@string/stok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_stok_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/item_tv_size"
+        android:layout_marginTop="@dimen/tv_item_stock_num_margin_top"
+        android:layout_marginEnd="@dimen/tv_item_stock_margin_end"
+        android:text="@string/tv_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_stok" />
+</androidx.constraintlayout.widget.ConstraintLayout>

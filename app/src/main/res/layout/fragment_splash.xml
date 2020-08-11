@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/orange"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.splash.SplashFragment">
+
+    <ImageView
+        android:id="@+id/iv_splash_logo"
+        android:layout_width="@dimen/iv_splash_logo_width"
+        android:layout_height="@dimen/iv_splash_logo_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/qasir_typograph"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_splash_bg"
+        android:layout_width="@dimen/iv_splash_bg_width"
+        android:layout_height="@dimen/iv_splash_bg_height"
+        android:layout_marginStart="@dimen/iv_splash_margin_start"
+        android:layout_marginTop="@dimen/iv_splash_margin_top"
+        android:layout_marginEnd="@dimen/iv_splash_margin_end"
+        android:layout_marginBottom="@dimen/iv_splash_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_background"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

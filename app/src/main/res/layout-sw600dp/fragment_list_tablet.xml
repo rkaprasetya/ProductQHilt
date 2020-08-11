@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_product_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_appbar_tv_margin_top"
+            android:layout_marginStart="@dimen/product_appbar_tv_margin_start"
+            android:textSize="@dimen/product_appbar_tv_size"
+            android:textColor="@color/orange"
+            android:text="@string/order_barang"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_product_list">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           >
+           <ImageView
+               android:id="@+id/iv_banner"
+               android:layout_width="match_parent"
+               android:visibility="gone"
+               android:layout_height="@dimen/product_iv_height"
+               tools:srcCompat="@tools:sample/avatars" />
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_below="@+id/iv_banner"
+               android:id="@+id/rv_product"
+               android:layout_width="match_parent"
+               android:visibility="gone"
+               android:layout_height="match_parent"
+              />
+           <TextView
+               android:id="@+id/tv_list_no_data"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="@string/no_data"
+               android:visibility="gone" />
+       </RelativeLayout>
+        <View
+            android:layout_width="1dp"
+            android:background="@color/divider"
+            android:layout_height="match_parent"/>
+        <fragment
+            android:id="@+id/fragment_detail_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="false"
+            app:navGraph="@navigation/nav_graph_tablet"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

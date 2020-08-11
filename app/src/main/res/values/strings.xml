@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProductQ</string>
+    <string name="tv_title">title</string>
+    <string name="tv_desc">desc</string>
+    <string name="tv_price">23</string>
+    <string name="stok">stok</string>
+    <string name="order_barang">Order Barang</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pronas_daging_kornet">Pronas daging kornet</string>
+    <string name="desc">Irisan tipis kornet yang digoreng dan dibumbui dengan bubuk bumbu barbekyu menghasilkan rasa daging panggang yang sangat lezat dan kuat dipadukan dengan rasa kornet yang kuat. Varian ini khusus dibuat untuk pecinta cita rasa daging panggang.</string>
+    <string name="price">Rp.18.000/pcs</string>
+    <string name="title_activity_product_list">ProductListActivity</string>
+    <string name="detail_price">Rp. %s/pcs</string>
+    <string name="item_price">Rp.%s</string>
+    <string name="no_data">No data to display.\nPlease turn on the Internet connection and relaunch the application</string>
+</resources>
