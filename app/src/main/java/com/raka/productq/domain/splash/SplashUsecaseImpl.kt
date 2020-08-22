@@ -2,7 +2,6 @@ package com.raka.productq.domain.splash
 
 import com.raka.productq.data.repository.SplashRepositoryImpl
 import com.raka.productq.presentation.ui.splash.SplashMapper
-import io.reactivex.Single
 import javax.inject.Inject
 
 

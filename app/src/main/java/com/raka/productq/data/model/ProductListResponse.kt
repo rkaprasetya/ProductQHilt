@@ -1,39 +1,44 @@
 package com.raka.productq.data.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class ProductListResponse(
-	@field:SerializedName("data")
+	@Json(name = "data")
 	val data: Data? = null,
-	@field:SerializedName("message")
+	@Json(name = "message")
 	val message: String? = null,
-	@field:SerializedName("status")
+	@Json(name = "status")
 	val status: String? = null
 )
+@JsonClass(generateAdapter = true)
 data class Data(
-	@field:SerializedName("banner")
+	@Json(name = "banner")
 	val banner: String? = null,
-	@field:SerializedName("products")
+	@Json(name = "products")
 	val products: List<ProductsItem?>? = null
 )
+@JsonClass(generateAdapter = true)
 data class ProductsItem(
-	@field:SerializedName("images")
+	@Json(name = "images")
 	val images: Images? = null,
-	@field:SerializedName("price")
+	@Json(name = "price")
 	val price: Int? = null,
-	@field:SerializedName("product_id")
+	@Json(name = "product_id")
 	val productId: Int? = null,
-	@field:SerializedName("description")
+	@Json(name = "description")
 	val description: String? = null,
-	@field:SerializedName("stock")
+	@Json(name = "stock")
 	val stock: Int? = null,
-	@field:SerializedName("product_name")
+	@Json(name = "product_name")
 	val productName: String? = null
 )
+@JsonClass(generateAdapter = true)
 data class Images(
-	@field:SerializedName("thumbnail")
+	@Json(name = "thumbnail")
 	val thumbnail: String? = null,
-	@field:SerializedName("large")
+	@Json(name = "large")
 	val large: String? = null
 )
 
