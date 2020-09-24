@@ -7,7 +7,7 @@ libraries used:
  - Dagger2
  - RxJava
  - Coroutine
- - Glide
+ - Coil
  - Retrofit
  - Room
  - Moshi
@@ -18,3 +18,6 @@ libraries used:
  Moshi tutorial
   - https://proandroiddev.com/getting-started-using-moshi-for-json-parsing-with-kotlin-5a460bf3935a
   - https://blog.mindorks.com/moshi-json-library-for-android
+
+  Coil Tutorial
+  - https://medium.com/better-programming/how-to-use-coil-kotlins-native-image-loader-d6715dda7d26

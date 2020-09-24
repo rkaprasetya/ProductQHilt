@@ -1,4 +1,4 @@
-package com.raka.productq.di.module
+package com.raka.productq.dihilt
 
 import com.raka.productq.data.api.ApiService
 import com.raka.productq.utils.Constants
@@ -6,6 +6,8 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -14,6 +16,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
+@InstallIn(ApplicationComponent::class)
 class NetworkModule {
     @Provides
     @Singleton
@@ -25,13 +28,13 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMoshi():Moshi = Moshi.Builder()
+    fun provideMoshi(): Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
 
     @Provides
     @Singleton
-    fun provideRetrofit(client: OkHttpClient,moshi: Moshi): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(client: OkHttpClient, moshi: Moshi): Retrofit = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
         .client(client)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
@@ -39,6 +42,5 @@ class NetworkModule {
         .build()
 
     @Provides
-    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 }

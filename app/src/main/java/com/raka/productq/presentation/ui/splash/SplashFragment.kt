@@ -1,32 +1,22 @@
 package com.raka.productq.presentation.ui.splash
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.raka.productq.QApp
+import com.google.android.material.snackbar.Snackbar
 import com.raka.productq.R
-import com.raka.productq.di.component.DaggerSplashComponent
-import com.raka.productq.utils.ViewModelFactory
-import com.raka.productq.utils.ViewModelsFactoryDi
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_splash.*
 
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
-    @Inject
-    lateinit var viewModelFactory: ViewModelsFactoryDi
-    private lateinit var viewModel: SplashViewModel
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        DaggerSplashComponent.builder()
-            .appComponent((requireActivity().application as QApp).component)
-            .build()
-            .inject(this)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(SplashViewModel::class.java)
-    }
+    private val viewModel: SplashViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,13 +29,26 @@ class SplashFragment : Fragment() {
         setupObserver()
         viewModel.loadProductList()
     }
+
     private fun setupObserver() {
         viewModel.finishFetching.observe(viewLifecycleOwner, Observer {
-            if (it){
+            if (it) {
                 openProductList()
             }
         })
+        viewModel.isError.observe(viewLifecycleOwner, Observer {
+            it.getContentIfNotHandled()?.let { isError ->
+                if (isError) {
+                    Snackbar.make(
+                        main_layout,
+                        getString(R.string.server_error),
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        })
     }
+
     private fun openProductList() {
         val action = SplashFragmentDirections.actionSplashFragmentToProductListFragment()
         findNavController().navigate(action)

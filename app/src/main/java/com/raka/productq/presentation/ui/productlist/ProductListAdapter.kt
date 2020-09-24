@@ -8,12 +8,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil.api.load
 import com.raka.productq.R
 import com.raka.productq.data.model.ProductListCompact
 import kotlinx.android.synthetic.main.item_list.view.*
 
-class ProductListAdapter:RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
+class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
     var list: MutableList<ProductListCompact> = mutableListOf()
     var navHostFragment = NavHostFragment()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
@@ -32,7 +32,10 @@ class ProductListAdapter:RecyclerView.Adapter<ProductListAdapter.ProductListView
     class ProductListViewHolder(itemView: View, val navHostFragment: NavHostFragment) :
         RecyclerView.ViewHolder(itemView) {
         fun bindItems(item: ProductListCompact) {
-            Glide.with(itemView).load(item.thumbnail).into(itemView.iv_item_list)
+            itemView.iv_item_list.load(item.thumbnail) {
+                placeholder(R.drawable.ic_baseline_emoji_emotions_24)
+                error(R.drawable.ic_baseline_error_24)
+            }
             itemView.tv_item_name.text = item.productName
             itemView.tv_item_stok_number.text = item.stock.toString()
             itemView.tv_item_price.text =

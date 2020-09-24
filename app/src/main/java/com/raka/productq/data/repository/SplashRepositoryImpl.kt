@@ -8,7 +8,9 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class SplashRepositoryImpl @Inject constructor(private val apiService: ApiService, private val dao: ParametersDao):
     SplashRepository {
     override fun getProductListRemote() = apiService.getProductList()

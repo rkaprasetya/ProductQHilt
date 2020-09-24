@@ -22,4 +22,5 @@ data class ProductLocal(
     @ColumnInfo(name = "large")
     val large: String? = null,
     @ColumnInfo(name = "banner")
-    val banner:String? = null)
+    val banner: String? = null
+)

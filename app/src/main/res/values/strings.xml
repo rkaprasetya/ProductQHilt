@@ -12,5 +12,6 @@
     <string name="title_activity_product_list">ProductListActivity</string>
     <string name="detail_price">Rp. %s/pcs</string>
     <string name="item_price">Rp.%s</string>
+    <string name="server_error">Failed retrieving data from server</string>
     <string name="no_data">No data to display.\nPlease turn on the Internet connection and relaunch the application</string>
 </resources>
