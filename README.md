@@ -1,5 +1,5 @@
 # ProductQ
-An app showing productlist using MVVM and Dagger2
+An app showing productlist using MVVM and Dagger Hilt
 Programming language : Kotlin
 Design patten : MVVM+CleanArch
 libraries used:
