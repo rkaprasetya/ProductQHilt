@@ -4,7 +4,7 @@ Programming language : Kotlin
 Design patten : MVVM+CleanArch
 libraries used:
  - Navigation Component
- - Dagger2
+ - DaggerHilt
  - RxJava
  - Coroutine
  - Coil
